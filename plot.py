@@ -1,11 +1,11 @@
 import matplotlib.pyplot as plt
 
-x = [1,2,3,4]
-y= [1,4,9,16]
+x = [1, 2, 3, 4]
+y1 = [1, 4, 9, 16]
+y2 = [1, 2, 3, 4]
 
-plt.plot(x,y, linewidth=3, color='red')
-plt.title("Square Numbers", fontsize=20)
-plt.xlabel("Input Value", fontsize=14)
-plt.ylabel("Square Value", fontsize=14)
-plt.tick_params(axis='both', labelsize=12)
+plt.plot(x, y1, label="Squares")
+plt.plot(x, y2, label="Linear")
+
+plt.legend()
 plt.show()
