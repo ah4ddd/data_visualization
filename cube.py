@@ -2,7 +2,6 @@ import matplotlib.pyplot as plt
 
 plt.style.use('seaborn-v0_8')
 
-# ── Small plot: First five cubes ──
 x_small = [1, 2, 3, 4, 5]
 y_small = [x**3 for x in x_small]
 
@@ -21,7 +20,6 @@ ax1.set_ylim(0, 140)
 plt.tight_layout()
 plt.show()
 
-# ── Big plot: Your original 5,000 cubes ──
 x_val = range(1, 5001)
 y_val = [x**3 for x in x_val]
 
