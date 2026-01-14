@@ -7,7 +7,7 @@ class RandomWalk:
         self.x_values = [0]
         self.y_values = [0]
 
-    def fill(self):
+    def fill_walk(self):
         while len(self.x_values) < self.num_points:
             #direction and how far to go
             x_direction = choice([1,-1])
@@ -26,3 +26,4 @@ class RandomWalk:
 
             self.x_values.append(x)
             self.y_values.append(y)
+
