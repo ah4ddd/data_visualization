@@ -8,6 +8,7 @@ fig = px.line(
     x=x,
     y=y,
     title="My First Plotly Chart",
-    labels={"x": "X Axis", "y": "Y Axis"}
+    labels={"x": "X Axis", "y": "Y Axis"},
+    markers=True
 )
 fig.show()
