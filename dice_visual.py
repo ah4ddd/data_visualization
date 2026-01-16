@@ -1,3 +1,4 @@
+from matplotlib.axis import XAxis
 from die import Die
 import plotly.express as px
 
@@ -23,4 +24,5 @@ fig = px.bar(x=poss_results,
              title="Results of Rolling Two D6 1,000 Times",
              labels={"x":"Results", "y":"Frequency of Results"}
              )
+fig.update_layout(xaxis_dtick=1)
 fig.show()
