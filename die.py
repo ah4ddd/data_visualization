@@ -1,14 +1,9 @@
-import plotly.express as px
-import pandas
+from random import randint
 
-x = [1,2,3,4]
-y = [10,20,15,30]
+class Die:
+    def __init__(self, num_sides=6):
+        self.num_sides = num_sides
 
-fig = px.line(
-    x=x,
-    y=y,
-    title="My First Plotly Chart",
-    labels={"x": "X Axis", "y": "Y Axis"},
-    markers=True
-)
-fig.show()
+    def roll(self):
+        return randint(1, self.num_sides)
+
