@@ -1,5 +1,9 @@
 from pathlib import Path
 import csv
+import matplotlib.pyplot as plt
+
+plt.style.use('ggplot')
+fig, ax = plt.subplots()
 
 path = Path('weather_data/sitka_weather.csv')
 lines = path.read_text().splitlines()
@@ -16,3 +20,12 @@ for row in reader:
     highs.append(high)
 
 print(highs)
+
+ax.plot(highs, color="red")
+
+ax.set_title("Daily High Tempratures, July 2021 (Sitka, Alaska)", fontsize=24)
+ax.set_xlabel("", fontsize=16)
+ax.set_ylabel("Temprature (F)", fontsize=16)
+ax.tick_params(labelsize=16)
+
+plt.show()
