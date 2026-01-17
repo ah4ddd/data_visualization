@@ -25,9 +25,9 @@ for row in reader:
         highs.append(high)
         lows.append(low)
 
-ax.plot(dates, highs, color="red", alpha=1)
-ax.plot(dates, lows, color="blue", alpha=1)
-ax.fill_between(dates, highs, lows, facecolor='blue', alpha=0.1)
+ax.plot(dates, highs, color="yellow", alpha=1)
+ax.plot(dates, lows, color="green", alpha=1)
+ax.fill_between(dates, highs, lows, facecolor='yellow', alpha=0.1)
 
 ax.set_title("Daily High and Low Tempratures (Death Valley, California)", fontsize=20)
 ax.set_xlabel("", fontsize=16)
