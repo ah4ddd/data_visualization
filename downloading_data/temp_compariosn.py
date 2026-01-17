@@ -30,8 +30,8 @@ for row in reader:
         highx.append(high)
         lowx.append(low)
 
-ax.plot(datex, highx, color="green", alpha=1)
-ax.plot(datex, lowx, color="yellow", alpha=1)
+ax.plot(datex, highx, color="green", label="Death Valley High")
+ax.plot(datex, lowx, color="yellow", label="Death Valley Low")
 ax.fill_between(datex, highx, lowx, facecolor='yellow', alpha=0.1)
 
 dates, highs, lows = [], [], []
@@ -48,13 +48,14 @@ for row in reader_2:
         lows.append(low)
 
 ax.set_title("Daily High and Low Tempratures comparison between Death Valley, California and Sitka Alaska", fontsize=20)
-ax.set_xlabel("Green-Yellow = Death Valley, Red-Blue = Sitka Alaska", fontsize=16)
+ax.set_xlabel("", fontsize=16)
 fig.autofmt_xdate()
 ax.set_ylabel("Temprature (F)", fontsize=16)
 ax.tick_params(labelsize=16)
 
-ax.plot(dates, highs, color="red", alpha=1)
-ax.plot(dates, lows, color="blue", alpha=1)
+ax.plot(dates, highs, color="red", label="Sitka High")
+ax.plot(dates, lows, color="blue", label="Sitka Low")
 ax.fill_between(dates, highs, lows, facecolor='blue', alpha=0.1)
 
+ax.legend()
 plt.show()
