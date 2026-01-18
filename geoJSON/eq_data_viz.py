@@ -2,7 +2,7 @@ from pathlib import Path
 import json
 import plotly.express as px
 
-path = Path('eq_data/latest_eq_past_week.geojson')
+path = Path('eq_data/past_month_eq.geojson')
 contents = path.read_text()
 all_eq_data = json.loads(contents)
 
