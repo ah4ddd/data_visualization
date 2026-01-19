@@ -1,4 +1,3 @@
-from matplotlib.axis import XAxis
 from die import Die
 import plotly.express as px
 
