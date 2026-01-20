@@ -14,15 +14,21 @@ response_dict = r.json()
 print(f"complete results: {not response_dict['incomplete_results']}")
 
 repo_dicts = response_dict['items']
-repo_names, stars = [], []
+repo_names, stars, hover_texts = [], [], []
 for repo_dict in repo_dicts:
     repo_names.append(repo_dict['name'])
     stars.append(repo_dict['stargazers_count'])
 
+    owner = repo_dict['owner']['login']
+    description = repo_dict['description']
+    hover_text = f"{owner}<br />{description}"
+    hover_texts.append(hover_text)
+
 fig = px.bar(x=repo_names,
              y=stars,
              labels= {'x':'Repository', 'y':'Stars'},
-             title='Most-Starred Python Repos on Github')
+             title='Most-Starred Python Repos on Github',
+             hover_name=hover_texts)
 
 fig.update_layout(title_font_size=28,
                   xaxis_title_font_size=20,
