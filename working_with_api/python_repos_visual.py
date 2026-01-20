@@ -36,6 +36,10 @@ fig = px.bar(x=repo_links,
 fig.update_layout(title_font_size=28,
                   xaxis_title_font_size=20,
                   yaxis_title_font_size=20)
+
+fig.update_traces(marker_color=(255,127,152),
+                  marker_opacity=0.6
+                  )
 fig.show()
 
 
