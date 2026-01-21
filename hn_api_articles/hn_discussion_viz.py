@@ -2,7 +2,7 @@ from operator import itemgetter
 import requests
 import plotly.express as px
 
-# 1. Get top story IDs
+# Get top story IDs
 url = "https://hacker-news.firebaseio.com/v0/topstories.json"
 r = requests.get(url)
 print(f"Status code: {r.status_code}")
@@ -11,7 +11,7 @@ submission_ids = r.json()[:30]  # limit to top 30
 
 submission_dicts = []
 
-# 2. Fetch details for each story
+# Fetch details for each story
 for submission_id in submission_ids:
     item_url = f"https://hacker-news.firebaseio.com/v0/item/{submission_id}.json"
     r = requests.get(item_url)
@@ -31,14 +31,14 @@ for submission_id in submission_ids:
 
     submission_dicts.append(submission_dict)
 
-# 3. Sort by comment count (most active discussions)
+# Sort by comment count (most active discussions)
 submission_dicts = sorted(
     submission_dicts,
     key=itemgetter('comments'),
     reverse=True
 )
 
-# 4. Prepare data for visualization
+# Prepare data for visualization
 titles = []
 comment_counts = []
 hover_texts = []
@@ -52,7 +52,7 @@ for submission in submission_dicts:
     comment_counts.append(comments)
     hover_texts.append(f"Comments: {comments}")
 
-# 5. Visualize
+# Visualize
 fig = px.bar(
     x=titles,
     y=comment_counts,
